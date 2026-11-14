@@ -1,48 +1,43 @@
-# Salesforce Dev Sheet (Apex, LWC, Aura)
+# Salesforce Dev Sheet
 
-A Striver-style practice sheet for Salesforce developers. Instead of just question titles, every coding problem has a **full problem statement, an example and a hint**, grouped by topic and tagged **Easy / Medium / Hard**.
+A practice sheet for Salesforce developer interviews, laid out like Striver's DSA sheet: pick a topic, work through the problems from easy to hard, tick them off. It covers Apex, LWC and Aura.
 
-Pure HTML, CSS and JavaScript. No build step, no backend. Progress is stored in each visitor's browser (localStorage), so everyone who opens your Pages link gets their own tracker.
+**Live site:** https://soumyag001.github.io/Saseforce-Development-Practice/
 
-## What is inside
-- **Coding Problems** (default tab): Apex, LWC and Aura problems with description, example and hint
-  - Apex: strings and collections, SOQL and aggregates, triggers, async Apex, integration and testing
-  - LWC: component basics, Apex and data service, communication, advanced components, Jest
-  - Aura: basics, events, advanced patterns, migration to LWC
-- **Theory Q&A**: interview concept questions with Concept / Coding / Scenario tags
+Every coding problem comes with a proper statement, a sample input/output and a hint you can open if you get stuck. There's no backend. Your ticks, stars and notes are saved in your own browser, so each visitor gets their own tracker.
 
-## Features
-- Click a problem title (or View) to open its statement, example and hint
-- Progress bars overall, per difficulty and per topic
-- Search, filter by difficulty and status
-- Star problems to revise later and keep your own solution in the notes box
-- Export / import progress as JSON (move between devices)
-- Dark mode
+## What's covered
 
-## Host on GitHub Pages
-1. Create a new public repository.
-2. Upload all files in this folder to the root of the repo.
-3. Open the repo **Settings -> Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**, select your branch and `/ (root)`, then Save.
-5. After a minute your site is live at `https://<your-username>.github.io/<repo-name>/`.
+**Apex:** working with objects and relationships, SOQL and aggregates, triggers, automation (Flow actions, approvals, email, schedulers), async Apex, integrations and testing, security and sharing.
 
-## Add or edit problems
-Coding problems live in `problems_apex.js` and `problems_lwc_aura.js`. Each problem is one call:
+**LWC:** component basics, wire and Apex, Lightning Data Service, parent/child and LMS communication, Kanban/lookup/chart style builds, Jest.
+
+**Aura:** basics, events, dynamic components, and moving Aura code to LWC.
+
+There's also a separate Theory Q&A tab with concept and scenario questions for the interview round.
+
+## Using the sheet
+
+Click a problem to read it. Tick it when you're done, star it if you want to come back to it, and use the pencil icon to keep your own solution. Progress can be exported and imported as a JSON file if you switch browsers or devices.
+
+## Adding problems
+
+Coding problems live in `problems_apex.js` and `problems_lwc_aura.js`, one line per problem:
 
 ```js
-P("Title", "E|M|H", "Problem statement", "Example input/output", "Hint"),
+P("Title", "E|M|H", "Problem statement", "Example", "Hint"),
 ```
 
 Theory questions live in `questions.js`:
 
 ```js
-["Question text", "E|M|H", "C|K|S"],
+["Question", "E|M|H", "C|K|S"],
 ```
 
-Progress is tied to the position of each item, so **add new items at the end of a topic** (and new topics at the end of a section) to avoid shifting people's saved progress. Reordering or deleting items shifts saved progress for existing visitors.
+Saved progress is tied to where a problem sits in its topic, so add new ones at the end of a topic. Reordering or deleting existing ones will shift people's ticks.
 
-## Contributing
-Pull requests with new problems are welcome. Please include a clear statement, an example and a hint.
+Pull requests with new problems are welcome. Include a clear statement, an example and a hint.
 
 ## License
+
 MIT
